@@ -26,11 +26,12 @@ const Profile = () => {
             style={{
               display: "flex",
               alignItems: "center",
-              marginLeft: "50%",
+              marginLeft: "5%",
+              justifyContent: "space-between",
             }}
           >
             <p>Hi, {user.username}</p>
-            <button style={{ margin: 20 }} onClick={handleLogout}>
+            <button style={{ padding: 10, margin: 10 }} onClick={handleLogout}>
               Logout
             </button>
           </div>
