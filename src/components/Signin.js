@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { navigate } from "@reach/router";
 import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -7,6 +7,12 @@ import { useDispatch } from "react-redux";
 import { authUser } from "../redux/action";
 const Signin = () => {
   const dispatch = useDispatch();
+  useEffect(() => {
+    const token = localStorage.getItem("tokenn");
+    if (token) {
+      navigate("/profile");
+    }
+  }, []);
   const [username, setUsername] = useState();
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState();

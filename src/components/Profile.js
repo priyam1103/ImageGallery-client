@@ -5,15 +5,14 @@ import i2 from "../assets/image2.jpg";
 import { removeUser } from "../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 const Profile = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("tokenn");
     if (!token) {
       navigate("/");
     }
   }, []);
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
-
   const handleLogout = () => {
     navigate("/");
     dispatch(removeUser());

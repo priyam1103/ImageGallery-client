@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { navigate } from "@reach/router";
 
 const Home = () => {
+  useEffect(() => {
+    const token = localStorage.getItem("tokenn");
+    if (token) {
+      navigate("/profile");
+    }
+  }, []);
   const handleLogin = () => {
     navigate("/login");
   };

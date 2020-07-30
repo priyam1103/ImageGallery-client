@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { navigate } from "@reach/router";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { authUser } from "../redux/action";
-const Auth = () => {
+
+const Signup = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const [userType, setUserType] = useState();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("tokenn");
+    if (token) {
+      navigate("/profile");
+    }
+  }, []);
   const handleClick = () => {
     setLoading(true);
+
     setError();
     if (
       username === undefined ||
@@ -112,4 +120,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default Signup;

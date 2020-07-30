@@ -8,7 +8,7 @@ import Home from "./components/Home";
 import Signin from "./components/Signin";
 import "./App.css";
 import Profile from "./components/Profile";
-import Auth from "./components/Auth";
+import Signup from "./components/Signup";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,6 @@ const App = () => {
         })
         .then((res) => {
           dispatch(authUser({ token, user_: res.data[0] }));
-          console.log(res);
         });
       navigate("/profile");
     } else {
@@ -34,7 +33,7 @@ const App = () => {
       <Router>
         <Home path="/" exact />
         <Profile path="/profile" />
-        <Auth path="/signup" />
+        <Signup path="/signup" />
         <Signin path="/login" />
       </Router>
     </div>
