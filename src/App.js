@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
 
-function App() {
+import { useDispatch } from "react-redux";
+import { Router, navigate } from "@reach/router";
+import { authUser } from "./redux/action";
+import axios from "axios";
+import Home from "./components/Home";
+import Signin from "./components/Signin";
+import "./App.css";
+import Profile from "./components/Profile";
+import Auth from "./components/Auth";
+
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const token = localStorage.getItem("tokenn");
+    if (token) {
+      axios
+        .get("http://localhost:8956/api/users/verify", {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          dispatch(authUser({ token, user_: res.data[0] }));
+          console.log(res);
+        });
+      navigate("/profile");
+    } else {
+      navigate("/");
+    }
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Home path="/" exact />
+        <Profile path="/profile" />
+        <Auth path="/signup" />
+        <Signin path="/login" />
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
