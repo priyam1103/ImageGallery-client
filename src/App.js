@@ -16,7 +16,7 @@ const App = () => {
     const token = localStorage.getItem("tokenn");
     if (token) {
       axios
-        .get("http://localhost:8956/api/users/verify", {
+        .get("https://assgnimage.herokuapp.com/api/users/verify", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {

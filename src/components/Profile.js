@@ -38,7 +38,7 @@ const Profile = () => {
           <div style={{}}>
             {user.userType === "A" ? (
               <img
-                style={{ width: "100%", height: 530 }}
+                style={{ width: window.innerWidth, height: window.innerHeight }}
                 src={i2}
                 alt="i2"
               ></img>
@@ -46,12 +46,18 @@ const Profile = () => {
             {user.userType === "B" ? (
               <div style={{ display: "flex" }}>
                 <img
-                  style={{ height: 600, width: "50%" }}
+                  style={{
+                    height: window.innerHeight,
+                    width: window.innerWidth / 2,
+                  }}
                   alt="i1"
                   src={i1}
                 ></img>
                 <img
-                  style={{ height: 600, width: "50%" }}
+                  style={{
+                    height: window.innerHeight,
+                    width: window.innerWidth / 2,
+                  }}
                   src={i2}
                   alt="i2"
                 ></img>
@@ -60,12 +66,18 @@ const Profile = () => {
             {user.userType === "C" ? (
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <img
-                  style={{ height: 300, width: "100%" }}
+                  style={{
+                    height: window.innerHeight / 2,
+                    width: window.innerWidth,
+                  }}
                   src={i1}
                   alt="i1"
                 ></img>
                 <img
-                  style={{ height: 300, width: "100%" }}
+                  style={{
+                    height: window.innerHeight / 2,
+                    width: window.innerWidth,
+                  }}
                   src={i2}
                   alt="i2"
                 ></img>

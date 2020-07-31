@@ -32,7 +32,7 @@ const Signup = () => {
       setError("Please enter the details properly");
     } else {
       axios
-        .post("http://localhost:8956/api/users/signup", {
+        .post("https://assgnimage.herokuapp.com/api/users/signup", {
           username: username,
           password: password,
           userType: userType,
