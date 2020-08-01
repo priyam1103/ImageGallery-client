@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { navigate } from "@reach/router";
 import i1 from "../assets/image1.jpg";
+import i3 from "../assets/i3.jpg";
 import i2 from "../assets/image2.jpg";
 import { removeUser } from "../redux/action";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,7 +40,7 @@ const Profile = () => {
             {user.userType === "A" ? (
               <img
                 style={{ width: window.innerWidth, height: window.innerHeight }}
-                src={i2}
+                src={i1}
                 alt="i2"
               ></img>
             ) : null}
@@ -70,7 +71,7 @@ const Profile = () => {
                     height: window.innerHeight / 2,
                     width: window.innerWidth,
                   }}
-                  src={i1}
+                  src={i2}
                   alt="i1"
                 ></img>
                 <img
@@ -78,7 +79,7 @@ const Profile = () => {
                     height: window.innerHeight / 2,
                     width: window.innerWidth,
                   }}
-                  src={i2}
+                  src={i3}
                   alt="i2"
                 ></img>
               </div>
