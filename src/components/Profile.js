@@ -3,16 +3,21 @@ import { navigate } from "@reach/router";
 import i1 from "../assets/image1.jpg";
 import i3 from "../assets/i3.jpg";
 import i2 from "../assets/image2.jpg";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 import { removeUser } from "../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 const Profile = () => {
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user.user);
   useEffect(() => {
+     setLoading(true);
     const token = localStorage.getItem("tokenn");
     if (!token) {
       navigate("/");
     }
+     setLoading(false);
   }, []);
   const handleLogout = () => {
     navigate("/");
@@ -21,6 +26,18 @@ const Profile = () => {
 
   return (
     <div>
+     {loading ? (
+        <Loader
+          style={{
+            marginTop: "10%",
+          }}
+          type="Audio"
+          color="#00BFFF"
+          height={100}
+          width={100}
+        />
+      ) : (
+    <>
       {user ? (
         <>
           <div
@@ -90,6 +107,7 @@ const Profile = () => {
           </div>
         </>
       ) : null}
+      <>)}
     </div>
   );
 };
