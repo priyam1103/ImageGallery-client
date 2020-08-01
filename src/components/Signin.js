@@ -18,6 +18,9 @@ const Signin = () => {
   const [password, setPassword] = useState();
   const [error, setError] = useState();
 
+  const handleSignup = () => {
+    navigate("/signup");
+  };
   const handleClick = () => {
     setLoading(true);
     axios
@@ -90,7 +93,7 @@ const Signin = () => {
             {" "}
             Sign In{" "}
           </button>
-          <a href="/signup" onClick={() => redirectTo("/signup")}>
+          <a href="" onClick={handleSignup}>
             Click here to signup!
           </a>
           {error ? <p style={{ color: "red" }}>{error}</p> : null}

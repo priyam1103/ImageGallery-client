@@ -55,6 +55,9 @@ const Signup = () => {
         });
     }
   };
+  const handleLogin = () => {
+    navigate("/login");
+  };
   const handleTypeSelect = (typ) => {
     setUserType(typ);
   };
@@ -112,7 +115,7 @@ const Signup = () => {
             {" "}
             Sign Up{" "}
           </button>
-          <a href="/login" onClick={() => redirectTo("/login")}>
+          <a href="" onClick={handleLogin}>
             Click here to signin !
           </a>
           {error ? <p style={{ color: "red" }}> {error}</p> : null}
