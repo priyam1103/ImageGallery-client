@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { navigate } from "@reach/router";
+import { navigate, redirectTo } from "@reach/router";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -112,7 +112,7 @@ const Signup = () => {
             {" "}
             Sign Up{" "}
           </button>
-          <a href="/login" onClick={() => navigate("/login")}>
+          <a href="/login" onClick={() => redirectTo("/login")}>
             Click here to signin !
           </a>
           {error ? <p style={{ color: "red" }}> {error}</p> : null}
