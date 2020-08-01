@@ -90,7 +90,9 @@ const Signin = () => {
             {" "}
             Sign In{" "}
           </button>
-          <a href="/signup">Click here to signup!</a>
+          <a href="" onClick={() => navigate("/signup")}>
+            Click here to signup!
+          </a>
           {error ? <p style={{ color: "red" }}>{error}</p> : null}
         </div>
       )}

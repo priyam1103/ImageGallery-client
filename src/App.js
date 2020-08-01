@@ -23,8 +23,6 @@ const App = () => {
           dispatch(authUser({ token, user_: res.data[0] }));
         });
       navigate("/profile");
-    } else {
-      navigate("/");
     }
   }, []);
 
