@@ -115,9 +115,18 @@ const Signup = () => {
             {" "}
             Sign Up{" "}
           </button>
-          <a href="" onClick={handleLogin}>
-            Click here to signin !
-          </a>
+          <button
+            style={{
+              border: "none",
+
+              color: "#069",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+            onClick={handleLogin}
+          >
+            Click here to SignIn!
+          </button>
           {error ? <p style={{ color: "red" }}> {error}</p> : null}
         </div>
       )}

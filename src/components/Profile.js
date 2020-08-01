@@ -31,7 +31,10 @@ const Profile = () => {
               justifyContent: "space-between",
             }}
           >
-            <p>Hi, {user.username}</p>
+            <p>
+              Hi,<span style={{ color: "red" }}> {user.username}</span> your
+              type is <span style={{ color: "red" }}>{user.userType}</span>
+            </p>
             <button style={{ padding: 10, margin: 10 }} onClick={handleLogout}>
               Logout
             </button>
