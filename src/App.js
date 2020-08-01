@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
-import { Router, navigate } from "@reach/router";
+import { Router, Redirect, navigate } from "@reach/router";
 import { authUser } from "./redux/action";
 import axios from "axios";
 import Home from "./components/Home";
@@ -33,6 +33,7 @@ const App = () => {
         <Profile path="/profile" />
         <Signup path="/signup" />
         <Signin path="/login" />
+        {/* <Redirect from="*" to="/" /> */}
       </Router>
     </div>
   );
