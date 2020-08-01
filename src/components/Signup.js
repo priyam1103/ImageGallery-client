@@ -102,7 +102,7 @@ const Signup = () => {
           <label htmlFor="type">Choose a Type:</label>
 
           <select
-            onClick={(e) => handleTypeSelect(e.target.value)}
+            onChange={(e) => handleTypeSelect(e.target.value)}
             name="type"
             id="type"
           >
